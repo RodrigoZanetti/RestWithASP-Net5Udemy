@@ -1,8 +1,13 @@
+using RestWithASPNETErudio.Services;
+using RestWithASPNETErudio.Services.Implementations;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+// Dependency injection 
+builder.Services.AddScoped<IPersonService, PersonServiceImplementation>();
 
 var app = builder.Build();
 
